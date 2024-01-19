@@ -8,7 +8,7 @@
   - [Installation de XAMPP pour MacOs](#installation-de-xampp-pour-macos)
 - [Les fichiers du formateur](#les-fichiers-du-formateur)
 - [Principe des exercices](#principe-des-exercices)
-- [Liste des fonctions à connaitre](../../tree/main/functions#les-fonctions-natives-et-constructions-du-langage-à-connaitre) - Par CŒUR !
+- [Liste des fonctions à connaître](../../tree/main/functions#les-fonctions-natives-et-constructions-du-langage-à-connaitre) - Par CŒUR !
 - [Les bases de PHP](#les-bases-de-php)
   - [Les fichiers PHP](#les-fichiers-php)
   - [Les balises PHP](#les-balises-php)
@@ -22,6 +22,7 @@
     - [Les tableaux multidimensionnels](#les-tableaux-multidimensionnels)
 - [Les variables superglobales](#les-variables-superglobales)
   - [$_GET](#_get)
+- [Les constantes](#les-constantes)
 - [Les conditions](#les-conditions)
   - [if](#if)
   - [else](#else)
@@ -49,6 +50,8 @@
   - [while](#while)
   - [do while](#do-while)
 - [Les fonctions](#les-fonctions)
+  - [Les fonctions natives](#les-fonctions-natives)
+  - [Les fonctions personnalisées](#les-fonctions-personnalisées)
 
 
 ---
@@ -624,6 +627,56 @@ var_dump($_GET);
 
 | 13 | ![Exercice 13](https://github.com/mikhawa/PHP-base/blob/main/datas/folder-type-php-opened_24.png?raw=true) | Exercice 13 | Créez un fichier `13-GET.php` et modifiez le switch pour afficher votre contenu pour les rubriques : Contact - Livre d'or - Actualités.  |
 |----|:----------------------------------------------------------------------------------------------------------:|:-----------:|:----------------------------------------------------------------------------------------------------------------------------------------:|
+
+---
+
+[Retour au menu](#menu-de-navigation)
+
+---
+
+## Les constantes
+
+Une constante est un identifiant (un nom) qui représente une valeur simple. Comme son nom l'indique, cette valeur ne peut pas changer durant l'exécution du script (sauf pour les constantes magiques qui changent à chaque fois).
+
+Une constante est définie avec la fonction `define()` ou avec l'opérateur `const`.
+
+Une fois qu'une constante est définie, elle ne peut pas être modifiée ou supprimée !
+
+Les constantes sont utiles pour stocker des informations qui ne changent pas tout au long de l'exécution du script, comme la version du script ou le nom d'un auteur.
+
+**Les paramètres de configuration sont souvent stockés dans des constantes !**
+
+Les constantes sont **globales**. Elles peuvent être utilisées dans toute la page. Attention en orienté objet, les constantes de classe sont définies dans la classe et sont donc accessibles autrement.
+
+Les bonnes pratiques principales de nommage des constantes sont les suivantes :
+
+- Les constantes sont écrites en majuscules.
+- Les constantes sont écrites en snake_case.
+
+
+Avec define() :
+
+```php  
+<?php
+// Définition de la constante avec define()
+define("NOM_DE_LA_CONSTANTE", "valeur de la constante");
+
+// Affichage de la constante
+echo NOM_DE_LA_CONSTANTE;
+?>
+```
+
+Avec const :
+
+```php
+<?php
+// Définition de la constante avec const
+const NOM_DE_LA_CONSTANTE = "valeur de la constante";
+
+// Affichage de la constante
+echo NOM_DE_LA_CONSTANTE;
+?>
+```
 
 ---
 
@@ -1563,11 +1616,38 @@ Une fonction peut être appelée plusieurs fois, elle peut prendre des paramètr
 
 Il existe des fonctions prédéfinies en PHP, comme `echo()` ou `print()`, qu'on nomme aussi fonctions natives ou même structures de langage pour les plus courantes.
 
+Il existe aussi des fonctions définies par l'utilisateur.
+
+### Les fonctions natives
+
+Les fonctions natives sont des fonctions prédéfinies en PHP, elles sont utilisables sans avoir à les définir.
+
+Depuis PHP 8 il est possible de changer l'ordre des arguments des fonctions natives, mais nous ne le ferons pas pour le moment.
+
+Les fonctions natives à connaître sont à ce paragraphe :
+
+[Liste des fonctions à connaître](../../tree/main/functions#les-fonctions-natives-et-constructions-du-langage-à-connaitre)
+
+### Les fonctions personnalisées
+
 Il existe aussi des fonctions définies par l'utilisateur, qu'on nomme fonctions personnalisées.
 
 https://www.php.net/manual/fr/language.functions.php
 
-A continuer...
+Pour créer une fonction, on utilise le mot-clé `function` suivi du nom de la fonction, puis des parenthèses `()` et des accolades `{}`.
+
+```php
+function nomDeLaFonction(){
+  // instructions
+}
+```
+
+```php
+function bonjour(){
+    echo "Bonjour";
+}
+```
+
 
 --- 
 
